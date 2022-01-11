@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+   <bean id="user" class="org.egitim.spring.domain.User" scope="prototype"></bean>
+   
+   
+   <bean id="admin" class="org.egitim.spring.domain.Admin" scope="singleton">
+      <property name="id" value="1"></property>
+      <property name="email" value="admin"></property>
+      <property name="password" value="1234"></property> 
+   </bean>
+   <bean id="home" class="org.egitim.spring.domain.Home" scope="prototype"></bean>
+   
+   
+   <bean id="renter" class="org.egitim.spring.domain.Renter" scope="prototype">
+       <property name="name" value="Ahmet Ozturk"></property>
+       <property name="email" value="ozturk@gmail.com"></property>
+       <property name="password" value="12345"></property>
+       <property name="id" value="1"></property>
+       <property name="identityNum" value="123"></property> 
+   </bean>
+   
+   
+   <bean id="lessor" class="org.egitim.spring.domain.Lessor" scope="prototype">
+       <property name="companyName" value="Company1"></property>
+       <property name="website" value="company1.com"></property>
+       <property name="id" value="1"></property>
+       <property name="email" value="company1Qgmail.com"></property>
+       <property name="password" value="12345"></property>     
+   </bean>
+   
+   
+   <bean id="systemManager" class="org.egitim.spring.system.SystemManager" scope="singleton" init-method="initMethod" destroy-method="destroyMethod">
+       <property name="homes">
+        <list>
+           <ref bean="home"/>
+           <ref bean="home"/>
+           <ref bean="home"/>
+           <ref bean="home"/>
+        </list>
+       </property>     
+       <property name="homeCategoryList">
+         <set>
+           <value>Villa</value>
+           <value>Apartment</value>
+           <value>Detached House</value>
+           <value>Waterside</value>
+           <value>Mansion</value>
+         </set>
+       </property>  
+   </bean>
+  
+   </beans>
+    
+
+    

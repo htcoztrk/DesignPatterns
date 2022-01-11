@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+   <bean id="company" class="org.egitim.spring.domain.Company"></bean>
+   <bean id="customer" class="org.egitim.spring.domain.Customer"></bean>
+   <bean id="emtia" class="org.egitim.spring.domain.Emtia">
+        <property name="observers">
+            <list>
+				<ref bean="company"/>
+				<ref bean="customer"/>			
+			</list>
+        </property>
+   </bean>
+   <bean id="doviz" class="org.egitim.spring.domain.Doviz" scope="prototype">
+        <property name="observers">
+            <list>
+				<ref bean="company"/>
+				<ref bean="customer"/>			
+			</list>
+         </property>
+    </bean>
+   <bean id="hisseSenedi" class="org.egitim.spring.domain.HisseSenedi" scope="prototype">
+       <property name="observers">
+            <list>
+				<ref bean="company"/>
+				<ref bean="customer"/>			
+			</list>
+        </property>
+   </bean>
+   
+   <bean id="araciKurum" class="org.egitim.spring.domain.AraciKurum">
+    <property name="users">
+            <list>
+				<ref bean="company"/>
+				<ref bean="customer"/>			
+			</list>
+        </property>
+        <property name="stocks">
+            <list>
+				<ref bean="hisseSenedi"/>
+				<ref bean="doviz"/>		
+				<ref bean="emtia"></ref>	
+			</list>
+        </property>
+   </bean>
+   <bean id="satisIslemiFacade" class="org.egitim.spring.domain.SatisIslemiFacade"></bean>
+</beans>

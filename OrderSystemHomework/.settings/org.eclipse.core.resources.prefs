@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//src/Test.java=UTF-8
+encoding//src/UI/CustomerUI.java=UTF-8
+encoding//src/UI/DashboardUI.java=UTF-8
+encoding//src/UI/ProductAddUI.java=UTF-8
+encoding//src/UI/ProductUI.java=UTF-8
+encoding//src/dataAccess/CompanyDao.java=UTF-8
+encoding//src/dataAccess/CustomerDao.java=UTF-8
+encoding//src/dataAccess/HardwareDao.java=UTF-8
+encoding//src/dataAccess/IndividualDao.java=UTF-8
+encoding//src/dataAccess/ManualDao.java=UTF-8
+encoding//src/dataAccess/OrderDao.java=UTF-8
+encoding//src/dataAccess/OrderItemDao.java=UTF-8
+encoding//src/dataAccess/ProductDao.java=UTF-8
+encoding//src/dataAccess/SoftwareDao.java=UTF-8
